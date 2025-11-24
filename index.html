@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>චානුකගේ ගැලරිය</title>
+    <style>
+        #gallery { display: none; }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <h2>මුරපදය ඇතුල් කරන්න</h2>
+        <input type="password" id="passwordInput">
+        <button onclick="checkPassword()">ඇතුල් වන්න</button>
+        <p id="message"></p>
+    </div>
+
+    <div id="gallery">
+        <h1>මගේ පුද්ගලික ඡායාරූප</h1>
+        <img src="photo1.jpg" width="300">
+        <img src="photo2.jpg" width="300">
+    </div>
+
+    <script>
+        // *** ඔබගේ මුරපදය මෙතැනට යොදන්න ***
+        const CORRECT_PASSWORD = "MySecretPassword123"; 
+
+        function checkPassword() {
+            const input = document.getElementById("passwordInput").value;
+            const loginDiv = document.getElementById("login");
+            const galleryDiv = document.getElementById("gallery");
+            const message = document.getElementById("message");
+
+            if (input === CORRECT_PASSWORD) {
+                loginDiv.style.display = 'none'; // Login form එක සඟවන්න
+                galleryDiv.style.display = 'block'; // Gallery එක පෙන්වන්න
+            } else {
+                message.textContent = "වැරදි මුරපදයක්. නැවත උත්සාහ කරන්න.";
+            }
+        }
+    </script>
+</body>
+</html>
